@@ -54,12 +54,5 @@ class EcController extends Controller
     public function stock(StockChangeRequest $request){
         $this->Item_management->add_stock($request);
         return redirect('/ec_form');
-    }
-
-
-
-
-
-
-    
+    }   
 }

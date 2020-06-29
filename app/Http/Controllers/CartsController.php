@@ -37,28 +37,13 @@ class CartsController extends Controller
         $user = Auth::user();//ユーザー獲得
         
         $carts = $this->cart_management->get_cart($user);
-        
-
-        
         $title ='cart一覧';
         return view('cart',[
             'title'=>$title,
             'carts'=>$carts,
             'user'=>$user,
         ]);
-
-
     }
-
-    // public function add($item_id){
-    //     $user = Auth::user();
-    //     $this->add_to_cart($user, $item_id);
-    //     //cart_management_service
-    //     return redirect('/items');
-    //   }
-
-    
-
     /**
      * Show the form for creating a new resource.
      *
@@ -77,13 +62,6 @@ class CartsController extends Controller
      */
     public function store(Cart_stock $request)
     {
-        //
-        //$carts = \App\Cart::find($request->item_id);
-        // $carts = \App\Cart::where('item_id',$request->item_id)->first();
-    
-        
-        //     $carts->amount = $request->amount;//itemオブジェクトのamountに値を代入
-        //     $carts->save();
         
         $this->cart_management->change_amount($request);
         return redirect('/cart');
