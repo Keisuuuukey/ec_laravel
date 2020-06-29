@@ -36,14 +36,6 @@ class EcGuestController extends Controller
     public function add($item_id){
         $user = Auth::user();
         $this->cart_management->add_to_cart($user,$user->id,$item_id);
-        
-        
-
         return redirect('/product_list');
-
-    }
-
-
-
-    
+    } 
 }

@@ -27,9 +27,9 @@ class CartRepository implements CartRepositoryInterface
 
     public function Cartchangeamount($request)
     {
-        $cart = app(Cart::class);//インスタンス生成
+        $cart = app(Cart::class);
         $carts = $cart->where('item_id', $request->item_id)->first();
-        $carts->amount = $request->amount;//itemオブジェクトのamountに値を代入
+        $carts->amount = $request->amount;
         $carts->save();
 
     }
