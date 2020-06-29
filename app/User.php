@@ -42,15 +42,10 @@ class User extends Authenticatable
         'item_id' // 中間テーブル内の相手のidのカラム名
 
       );
-
-      
     }
     public function purchasePasts(){
         return $this->hasMany('App\PurchasePast');
     }
-    
-    
-
 }
 
 

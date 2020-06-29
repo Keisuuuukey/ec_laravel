@@ -14,7 +14,4 @@ class ItemRepository implements ItemRepositoryInterface
         $item->stock = $result;
         $item->save();
     }
-
-    
-
 }
